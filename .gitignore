@@ -1,15 +1,23 @@
 *.iml
 .gradle
 /local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+local.properties
 .DS_Store
 /build
 /captures
 .externalNativeBuild
 .cxx
-local.properties
+
+# IDE
+.idea/
+
+# Markdown (내부 문서)
+*.md
+!README.md
+
+# Secrets
+*.keystore
+*.jks
+google-services.json
+firebase.json
+secrets.properties
