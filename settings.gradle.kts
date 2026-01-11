@@ -20,4 +20,17 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Compose-Nav3-Showcase"
+
 include(":app")
+
+// Core modules
+include(":core:data")
+include(":core:ui")
+include(":core:navigation")
+
+// Feature modules
+include(":feature:main")
+include(":feature:display")
+include(":feature:storage")
+include(":feature:about")
+include(":feature:developer")

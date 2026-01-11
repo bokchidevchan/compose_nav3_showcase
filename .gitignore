@@ -11,6 +11,9 @@ local.properties
 # IDE
 .idea/
 
+# Claude Code
+.claude/
+
 # Markdown (내부 문서)
 *.md
 !README.md

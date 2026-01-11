@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
 }
 
 android {
@@ -18,13 +19,6 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-        // Room schema export
-        ksp {
-            arg("room.schemaLocation", "$projectDir/schemas")
-            arg("room.incremental", "true")
-            arg("room.generateKotlin", "true")
-        }
     }
 
     buildTypes {
@@ -50,38 +44,36 @@ android {
 }
 
 dependencies {
+    // Modules
+    implementation(project(":core:data"))
+    implementation(project(":core:ui"))
+    implementation(project(":core:navigation"))
+    implementation(project(":feature:main"))
+    implementation(project(":feature:display"))
+    implementation(project(":feature:storage"))
+    implementation(project(":feature:about"))
+    implementation(project(":feature:developer"))
+
     // Core
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.activity.compose)
 
     // Compose BOM
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
-    implementation(libs.androidx.compose.ui.graphics)
-    implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
-    implementation(libs.androidx.compose.material.icons.extended)
 
     // Navigation 3
     implementation(libs.androidx.navigation3.runtime)
     implementation(libs.androidx.navigation3.ui)
-    implementation(libs.androidx.lifecycle.viewmodel.navigation3)
 
-    // Room
-    implementation(libs.androidx.room.runtime)
-    implementation(libs.androidx.room.ktx)
-    ksp(libs.androidx.room.compiler)
+    // Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 
     // Splash Screen
     implementation(libs.androidx.splashscreen)
-
-    // Kotlinx Serialization
-    implementation(libs.kotlinx.serialization.json)
-
-    // Coroutines
-    implementation(libs.kotlinx.coroutines.android)
 
     // Testing
     testImplementation(libs.junit)
