@@ -1,4 +1,4 @@
-package io.github.bokchidevchan.compose_nav3_showcase.ui.theme
+package io.github.bokchidevchan.compose_nav3_showcase.core.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

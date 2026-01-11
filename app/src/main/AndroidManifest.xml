@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".ComposeNav3ShowcaseApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -15,7 +16,7 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ComposeNav3Showcase">
+            android:theme="@style/Theme.ComposeNav3Showcase.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
